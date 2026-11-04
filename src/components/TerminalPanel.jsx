@@ -3,7 +3,7 @@ import { Terminal } from '@xterm/xterm'
 import { FitAddon } from '@xterm/addon-fit'
 import '@xterm/xterm/css/xterm.css'
 
-const SERVER_URL = import.meta.env.VITE_RUN_SERVER || 'ws://localhost:3001'
+const SERVER_URL = import.meta.env.VITE_RUN_SERVER || 'ws://codedesk-ax12.onrender.com'
 
 const TerminalPanel = forwardRef(function TerminalPanel(
   { height, hidden, onResize, onClose, onRunningChange },
