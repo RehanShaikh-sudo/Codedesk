@@ -1,0 +1,643 @@
+/* ---------- VS Code layout ---------- */
+.workbench-root {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: left;
+  letter-spacing: normal;
+}
+
+/* every VS Code part needs a positioned, sized box */
+#vscode-titlebar,
+#vscode-main,
+#vscode-left,
+#vscode-activitybar,
+#vscode-sidebar,
+#vscode-center,
+#vscode-editors,
+#vscode-panel,
+#vscode-right,
+#vscode-statusbar {
+  position: relative;
+}
+
+.titlebar-row {
+  position: relative;
+  z-index: 50;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  background: var(--vscode-titleBar-activeBackground, #f8f8f8);
+  border-bottom: 1px solid var(--vscode-titleBar-border, transparent);
+}
+
+#vscode-titlebar {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.profile-slot {
+  flex: 0 0 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#vscode-main {
+  display: flex;
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+#vscode-statusbar {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+#vscode-left {
+  display: flex;
+  flex: 0 0 auto;
+  height: 100%;
+  min-height: 0;
+}
+
+#vscode-activitybar {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 100%;
+}
+
+#vscode-sidebar {
+  flex: 0 0 300px;
+  width: 300px;
+  height: 100%;
+  min-width: 0;
+}
+
+#vscode-center {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+#vscode-editors {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+}
+
+#vscode-panel {
+  flex: 0 0 220px;
+  height: 220px;
+  width: 100%;
+  min-width: 0;
+}
+
+#vscode-right {
+  flex: 0 0 auto;
+  height: 100%;
+}
+
+/* ---------- Profile avatar + menu ---------- */
+.profile {
+  position: relative;
+}
+
+.avatar-btn {
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar-btn:hover .avatar,
+.avatar-btn:focus-visible .avatar {
+  box-shadow: 0 0 0 2px #3b6cf6;
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #3b6cf6;
+  color: #fff;
+  font-weight: 700;
+  object-fit: cover;
+  user-select: none;
+}
+
+.avatar.sm {
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+}
+
+.avatar.lg {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  flex: 0 0 auto;
+}
+
+.profile-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 10000;
+  width: 260px;
+  padding: 8px;
+  background: #fff;
+  color: #1f2430;
+  border: 1px solid #dfe3ec;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(31, 36, 48, 0.18);
+  font-size: 13px;
+}
+
+.profile-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid #eef0f6;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.profile-info span {
+  color: #5c6370;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu-item {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  background: transparent;
+  border-radius: 6px;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #eef0f6;
+}
+
+.menu-item.danger {
+  color: #b42318;
+}
+
+/* ---------- Login page ---------- */
+.auth-page {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8ecf8, #f5f6fa);
+}
+
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 400px;
+  max-width: 92vw;
+  padding: 32px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(31, 36, 48, 0.12);
+}
+
+.brand {
+  text-align: center;
+  font-weight: 700;
+  font-size: 26px;
+  color: #1f2430;
+}
+
+.auth-sub {
+  margin: 0;
+  text-align: center;
+  color: #5c6370;
+}
+
+.auth-tabs {
+  display: flex;
+  background: #eef0f6;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.auth-tabs button {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #5c6370;
+  cursor: pointer;
+}
+
+.auth-tabs button.active {
+  background: #fff;
+  color: #1f2430;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cfd4e0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.auth-card input:focus {
+  outline: 2px solid #3b6cf6;
+  border-color: transparent;
+}
+
+.code-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-primary,
+.btn-secondary {
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #3b6cf6;
+  color: #fff;
+  padding: 11px;
+  font-size: 15px;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.btn-secondary {
+  flex: 0 0 auto;
+  padding: 0 14px;
+  background: #eef0f6;
+  color: #1f2430;
+}
+
+.btn-secondary:hover {
+  background: #e1e5f0;
+}
+
+.auth-msg {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.auth-msg.error {
+  background: #fdeaea;
+  color: #b42318;
+}
+
+.auth-msg.ok {
+  background: #e7f6ec;
+  color: #1a7f37;
+}
+
+/* ---------- Run button + title bar actions ---------- */
+.profile-slot {
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 0 12px;
+}
+
+.btn-run {
+  background: #2ea043;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-run:hover:not(:disabled) {
+  background: #3fb950;
+}
+
+.btn-run:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.btn-terminal {
+  background: transparent;
+  color: var(--vscode-titleBar-activeForeground, #333);
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-terminal:hover {
+  background: rgba(128, 128, 128, 0.15);
+}
+
+/* ---------- Terminal panel ---------- */
+.terminal {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+}
+
+.terminal-resizer {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  cursor: ns-resize;
+  z-index: 5;
+}
+
+.terminal-resizer:hover {
+  background: #3b6cf6;
+}
+
+.terminal-tabs {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  border-top: 1px solid #3c3c3c;
+  background: #252526;
+}
+
+.terminal-tabs button {
+  border: 0;
+  background: transparent;
+  color: #9d9d9d;
+  padding: 7px 10px;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.terminal-tabs button.active {
+  color: #fff;
+  border-bottom-color: #3b6cf6;
+}
+
+.terminal-tabs button:hover {
+  color: #fff;
+}
+
+.terminal-tabs .spacer {
+  flex: 1;
+}
+
+.terminal-running {
+  color: #e2c08d;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.terminal-body {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 10px 14px;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.terminal-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terminal-input textarea {
+  flex: 1 1 auto;
+  min-height: 0;
+  resize: none;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border: 1px solid #3c3c3c;
+  border-radius: 4px;
+  padding: 8px;
+  font: inherit;
+}
+
+.terminal-input textarea:focus {
+  outline: 1px solid #3b6cf6;
+}
+
+.t-cmd { color: #4fc1ff; margin-top: 8px; }
+.t-out { color: #d4d4d4; }
+.t-err { color: #f48771; }
+.t-info { color: #8b8b8b; }
+.t-ok { color: #4ec9b0; }
+.t-fail { color: #f14c4c; font-weight: 600; }
+
+/* ---------- Release 2: logo, language bar, popup login, toast ---------- */
+
+/* CodeDesk logo in the title bar (replaces the editor logo) */
+:root {
+  --product-icon: url('/codedesk-logo.svg');
+}
+
+.monaco-workbench .part.titlebar > .titlebar-container > .titlebar-left > .window-appicon:not(.codicon) {
+  background-size: 20px;
+}
+
+/* Language buttons in the empty part of the left activity bar */
+.language-bar {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  bottom: 110px;
+  width: 48px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.language-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.lang-btn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.lang-btn:hover {
+  background: rgba(128, 128, 128, 0.22);
+}
+
+   .lang-btn img {
+     width: 28px;
+     height: 28px;
+     padding: 3px;
+     border-radius: 7px;
+     background: #fff;
+     object-fit: contain;
+   }
+
+.lang-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Login popup on top of the editor */
+.auth-page {
+  z-index: 20000;
+  background: rgba(15, 18, 28, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.auth-card {
+  position: relative;
+}
+
+.auth-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #5c6370;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-close:hover {
+  background: #eef0f6;
+}
+
+.auth-skip {
+  border: 0;
+  background: transparent;
+  color: #3b6cf6;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.auth-skip:hover {
+  text-decoration: underline;
+}
+
+.btn-login {
+  background: #3b6cf6;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background: #5580f8;
+}
+
+/* Small message at the bottom */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 15000;
+  max-width: 90vw;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #1f2430;
+  color: #fff;
+  font-size: 13px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+/* Layout shift fix: never let the browser scroll these boxes */
+.workbench-root,
+#vscode-main,
+#vscode-left,
+#vscode-center,
+#vscode-editors,
+#vscode-sidebar,
+#vscode-activitybar {
+  overflow: clip;
+}

@@ -1,0 +1,34 @@
+/* Plain reset. The Vite template CSS (centered text, big fonts, max-width on #root)
+   was breaking the VS Code layout, so it is removed. */
+/* border-box only for OUR components. VS Code's own CSS expects the default
+   content-box, so a global border-box rule misaligns its buttons and hover boxes. */
+.auth-page,
+.auth-page *,
+.profile-menu,
+.profile-menu *,
+.terminal,
+.terminal-tabs,
+.terminal-tabs *,
+.language-bar,
+.language-bar *,
+.toast {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #1f2430;
+  background: #f5f6fa;
+}

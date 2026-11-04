@@ -1,0 +1,8 @@
+{
+  "name": "codedesk-run-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "start": "node index.js" },
+  "dependencies": { "ws": "^8.18.0" }
+}
