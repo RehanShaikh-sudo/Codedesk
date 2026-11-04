@@ -1,6 +1,6 @@
 // Runs a single source file on a remote code-execution service (Judge0).
 // To switch to your own server later, only change VITE_JUDGE0_URL (and VITE_JUDGE0_KEY).
-const BASE_URL = (import.meta.env.VITE_JUDGE0_URL || 'https://ce.judge0.com').replace(/\/$/, '')
+const BASE_URL = (import.meta.env.VITE_JUDGE0_URL || 'https://codedesk-ax12.onrender.com').replace(/\/$/, '')
 const API_KEY = import.meta.env.VITE_JUDGE0_KEY
 
 // file extension -> Judge0 CE language (ids from Judge0 CE v1.13).
