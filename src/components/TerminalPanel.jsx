@@ -7,10 +7,19 @@ import '@xterm/xterm/css/xterm.css'
 function normalizeServerUrl(raw) {
   let url = String(raw || '').trim()
 
-  url = url
-    .replace(/^VITE_RUN_SERVER\s*=\s*/i, '')
-    .replace(/^["']+|["']+$/g, '')
-    .trim()
+  // Remove accidental environment variable assignment
+  url = url.replace(/^VITE_RUN_SERVER\s*=\s*/i, '')
+
+  // Remove surrounding quotes
+  url = url.replace(/^["']+|["']+$/g, '').trim()
+
+  // Remove accidental duplicate protocol
+  url = url.replace(/^wss\/\/+/i, '')
+  url = url.replace(/^ws\/\/+/i, '')
+
+  // Remove incorrect protocol prefixes
+  url = url.replace(/^wws:\/\//i, 'wss://')
+  url = url.replace(/^wss:\/\//i, 'wss://')
 
   if (!url) return 'ws://localhost:3001'
 
